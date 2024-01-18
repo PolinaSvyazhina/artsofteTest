@@ -1,0 +1,5 @@
+<div>
+  <ng-container *ngFor="let company of (companiesInfo | async)">
+    <company-item [company] = 'company'> </company-item>
+  </ng-container>
+</div>
