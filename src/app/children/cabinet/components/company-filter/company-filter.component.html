@@ -1,0 +1,13 @@
+<div class="container-filter">
+    <input [formControl]='filterInputByName' class="container-filter_input-st" placeholder="Введите название"
+           type="text"/>
+    <select [formControl]="filterSelectByIndustry" class="container-filter_select">
+        <option></option>
+        <option *ngFor="let industryType of industryTypeList" [value]="industryType">{{industryType}}</option>
+    </select>
+
+    <select [formControl]="filterSelectByType" class="container-filter_select">
+        <option></option>
+        <option *ngFor="let companyType of companyTypeList" [value]="companyType">{{companyType}}</option>
+    </select>
+</div>

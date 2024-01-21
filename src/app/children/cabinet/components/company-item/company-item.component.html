@@ -1,16 +1,17 @@
-<div [routerLink]="['/cabinet/detail/', company.id]" >
-  <div>
-    {{company.logo}}
-  </div>
-  <div>
-    <div>
-      {{company.suffix}}{{company.business_name}}
+<ng-container *ngIf="viewMode === 'full'; else flat">
+    <div [routerLink]="['/cabinet/detail/', company.id]" class="item-container">
+        <div class="item-container_left">
+            <img [src]="company.logo" class="item-container_left__img">
+        </div>
+        <div class="item-container_right">
+            {{company.suffix}}{{company.business_name}}
+            {{company.industry}}
+            {{company.type}}
+        </div>
     </div>
-    <div>
-      {{company.industry}}
+</ng-container>
+<ng-template #flat>
+    <div class="item-container-flat">
+        {{company.business_name}}
     </div>
-    <div>
-      {{company.type}}
-    </div>
-  </div>
-</div>
+</ng-template>

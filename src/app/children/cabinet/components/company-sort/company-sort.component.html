@@ -1,0 +1,8 @@
+<div class="sort-container">
+    <select [formControl]="sortOptionSelect" class="sort-container_select">
+        <option> Выберите сортировку</option>
+        <option [value]="sortOptionEnum.byName">По названию</option>
+        <option [value]="sortOptionEnum.byType">По типу</option>
+        <option [value]="sortOptionEnum.byIndustry">По виду деятельности</option>
+    </select>
+</div>

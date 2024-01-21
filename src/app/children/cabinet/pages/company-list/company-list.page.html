@@ -1,1 +1,9 @@
-<test-company-list></test-company-list>
+<ng-container *ngIf="companiesOriginInfo | async as companyListOrigin">
+    <div class="container-data-manipulation">
+        <company-sort (sortType)="sortTypeSelected($event)"></company-sort>
+        <company-filter (typeFilter)="filterQuerySelected($event)" [companyList]="companyListOrigin"></company-filter>
+    </div>
+    <ng-container *ngIf="companiesInfo | async as companyList">
+        <company-list (isUpdateList)='requestUpdate()' [companyList]="companyList"></company-list>
+    </ng-container>
+</ng-container>

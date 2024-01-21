@@ -1,0 +1,11 @@
+<ng-container *ngIf="(companyModel | async) as companyModel">
+    <div class="detail-container">
+        <span>Детальная информация о {{companyModel.suffix}} {{companyModel.business_name}}</span>
+        <img [src]="companyModel.logo" class="detail-container_img"/>
+        <span> Вид деятельности: {{companyModel.industry}}</span>
+        <span> Слоган: {{companyModel.catch_phrase}}</span>
+        <span> Контактный номер телефона: {{companyModel.phone_number}}</span>
+        <span> адрес: {{companyModel.full_address}}</span>
+
+    </div>
+</ng-container>

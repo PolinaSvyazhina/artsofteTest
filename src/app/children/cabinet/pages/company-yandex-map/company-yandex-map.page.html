@@ -1,0 +1,15 @@
+<ng-container *ngIf="(companyList | async) as companies">
+    <div *ngIf="companies.length > 0" class="container-map">
+        <company-list (companySelected)="openBalloon($event)"
+                      (isUpdateList)="requestUpdate()"
+                      [companyList]="companies" [viewMode]="'flat'"></company-list>
+        <div class="container">
+            <ya-map [center]="(currentCompanyLocation | async)!" [zoom]="6">
+                <ya-placemark
+                    *ngFor="let companyInfo of companies"
+                    [geometry]="[companyInfo.latitude, companyInfo.longitude]"
+                    [properties]="getMapProperties(companyInfo)"></ya-placemark>
+            </ya-map>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,23 @@
+.container-filter {
+    display: flex;
+    gap: 10px;
+
+    &_input-st {
+        padding: 11px 16px 10px 16px;
+        border: 0;
+        border-radius: 10px;
+        background: #F0EFEF;
+        font-size: 16px;
+        line-height: 19px;
+        outline: none;
+    }
+
+    &_select {
+        display: block;
+        font-size: 16px;
+        margin: 0;
+        border: 1px solid #aaa;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+        border-radius: .5em;
+    }
+}

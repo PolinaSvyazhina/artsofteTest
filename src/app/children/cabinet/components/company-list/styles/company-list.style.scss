@@ -1,0 +1,16 @@
+.list-item-container {
+    &_scroll {
+        height: 88vh;
+    }
+}
+
+:host ::ng-deep .cdk-virtual-scroll-content-wrapper {
+    overflow-y: scroll;
+}
+
+.list-item-container-flat {
+    &_scroll {
+        width: 300px;
+        height: 88vh;
+    }
+}

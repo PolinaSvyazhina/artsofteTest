@@ -1,0 +1,8 @@
+.detail-container {
+    display: grid;
+    gap: 20px;
+
+    &_img {
+        width: 300px;
+    }
+}

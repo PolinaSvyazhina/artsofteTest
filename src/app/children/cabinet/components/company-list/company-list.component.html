@@ -1,5 +1,8 @@
-<div>
-  <ng-container *ngFor="let company of (companiesInfo | async)">
-    <company-item [company] = 'company'> </company-item>
-  </ng-container>
-</div>
+<cdk-virtual-scroll-viewport
+    (scrolledIndexChange)="getIndex($event)"
+    [itemSize]="viewMode === 'full'? 88 : 60"
+    [ngClass]="{'list-item-container_scroll':viewMode === 'full', 'list-item-container-flat_scroll': viewMode === 'flat'}">
+    <ng-container *cdkVirtualFor="let company of companyList">
+        <company-item (click)="chooseCompany(company)" [company]='company' [viewMode]="viewMode"></company-item>
+    </ng-container>
+</cdk-virtual-scroll-viewport>
